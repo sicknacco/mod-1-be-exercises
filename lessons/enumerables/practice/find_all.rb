@@ -13,27 +13,31 @@ def find_all_even_numbers # done for you
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     numbers.find_all do |number|
-      # Your code goes here
+      number.odd?
     end
-
+    
     #  expected return value is [1, 3, 5, 7, 9]
   end
+  p find_all_odd_numbers
 
   def find_all_words_with_three_letters
     words = ["pill", "bad", "finger", "cat", "blue", "dog", "table", "red"]
 
-    # Your code goes here
-
-    #  expected return value is ["bad", "cat", "dog", "red"]
+    words.find_all do |word|
+      word.length == 3
+    end
   end
+    p find_all_words_with_three_letters
 
   def find_all_words_with_more_than_three_letters
     words = ["pill", "bad", "finger", "cat", "blue", "dog", "table", "red"]
 
-    # Your code goes here
-
+    words.find_all do |word|
+      word.length > 3
+    end
     #  expected return value is ["pill", "finger", "blue", "table"]
   end
+  p find_all_words_with_more_than_three_letters
 
   def find_all_words_ending_in_e
     words = ["are", "you", "strike", "thinking", "belt", "piece", "warble", "sing", "pipe"]

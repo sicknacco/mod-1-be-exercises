@@ -16,28 +16,33 @@ def no_waldo
     words = ["scarf", "sandcastle", "flag", "pretzel", "crow", "key"]
     found = words.find do |word|
 
-      # Your code goes here
+    word.include?("waldo")
 
     end
-
     # expected return value is nil
 end
+    p no_waldo
 
 def find_waldo
     words = ["noise", "dog", "fair", "house", "waldo", "bucket", "fish"]
 
-    # Your code goes here
-
+    words.find do |word|
+        word.include?("waldo")
+    end
     # expected return value is "waldo"
 end
+    p find_waldo
+    
 
 def cannot_find_3_letter_words
     words = ["piglet", "porridge", "bear", "blueberry"]
 
-    # Your code goes here
-
+    words.find do |word|
+        word.length == 3
+    end
     # expected return value is nil
 end
+p cannot_find_3_letter_words
 
 def find_13
     numbers = [2, 13, 19, 8, 3, 27]
