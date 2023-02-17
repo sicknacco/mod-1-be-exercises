@@ -25,7 +25,7 @@ RSpec.describe Medusa do
     expect(medusa.statues.empty?).to eq([])
   end
 
-  it "when staring at a person she gains a statue" do
+  xit "when staring at a person she gains a statue" do
     medusa = Medusa.new("Cassiopeia")
     victim = Person.new("Perseus")
 
@@ -35,7 +35,7 @@ RSpec.describe Medusa do
     expect(medusa.statues.first.name).to eq("Perseus")
   end
 
-  it "when staring at a person that person turns to stone" do
+  xit "when staring at a person that person turns to stone" do
     medusa = Medusa.new("Cassiopeia")
     victim = Person.new("Perseus")
 

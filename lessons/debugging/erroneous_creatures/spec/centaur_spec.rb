@@ -7,13 +7,13 @@ RSpec.describe Centaur do
     expect(centaur.name).to eq("George")
   end
 
-  xit "has a horse breed" do
+  it "has a horse breed" do
     centaur = Centaur.new("George","Palomino")
 
     expect(centaur.breed).to eq("Palomino")
   end
 
-  xit "has excellent bow skills" do
+  it "has excellent bow skills" do
     centaur = Centaur.new("George","Palomino")
 
     expect(centaur.shoot).to eq("Twang!!!")

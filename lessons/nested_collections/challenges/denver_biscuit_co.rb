@@ -1,9 +1,9 @@
-# Challenge 1:
-# Return the name ("Denver Biscuit")
-# Return the rating (4.5)
-# Return a list of accepted transactions (["pickup", "delivery"])
-# Return the first listed category title ("Sandwiches")
-# Return the opening hour on Tuesday (day 1) ("0800")
+#  Challenge 1:
+#  Return the name ("Denver Biscuit")
+#  Return the rating (4.5)
+#  Return a list of accepted transactions (["pickup", "delivery"])
+#  Return the first listed category title ("Sandwiches")
+#  Return the opening hour on Tuesday (day 1) ("0800")
 # Return the closing hour on Saturday (day 5) ("1500")
 # Return the current open status (is_now_open) (true)
 
@@ -136,4 +136,11 @@ denver_biscuit_co = {
         "delivery"
     ]
 }
+
+p denver_biscuit_co[:name]
+p denver_biscuit_co[:rating]
+p denver_biscuit_co[:transactions]
+p denver_biscuit_co[:categories][0][:title]
+p denver_biscuit_co[:hours][0][:open][1][:start]
+p denver_biscuit_co[:hours][0][:open][5][:end]
 
