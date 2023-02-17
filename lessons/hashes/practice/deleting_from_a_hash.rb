@@ -10,3 +10,7 @@ suitcase = {
 
 # 1. 1 pair of socks (so change the value from 4 to 3)
 # 2. All of our jackets
+
+p suitcase[:socks] = 3
+suitcase.delete("jackets")
+p suitcase
