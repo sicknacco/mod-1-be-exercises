@@ -1,14 +1,15 @@
 require './lib/dog'
+require 'barkable'
 
 max = Dog.new("Max")
 puts max.woof
 
 ## Describe what each part of the code above did -
-# `max` =>
-# `Dog` =>
-# `.woof` =>
+# `max` => Became an instance of the dog class
+# `Dog` => Class
+# `.woof` => Method called on an instance of a class
 
-# puts Dog.woof
+puts Dog.woof
 
 ## Is there any difference between the two methods above? (max.woof and Dog.woof)?
 
