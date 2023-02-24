@@ -14,4 +14,9 @@ RSpec.describe Contestant do
   it 'exists' do
     expect(@alexander).to be_a(Contestant)
   end
+
+  it 'contestant has attributes' do
+    expect(@alexander.full_name).to eq("Alexander Aigiades")
+    
+  end
 end
