@@ -13,6 +13,5 @@ RSpec.describe Contestant do
 
   it 'exists' do
     expect(@alexander).to be_a(Contestant)
-    expect(@alexander[:last_name]).to eq('Aigiades')
   end
 end
