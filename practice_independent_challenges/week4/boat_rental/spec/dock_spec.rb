@@ -31,4 +31,30 @@ RSpec.describe Dock do
     expect(@dock.rental_log.keys).to eq([@kayak_1, @kayak_2, @sup_1])
     expect(@dock.rental_log.values).to eq([@patrick, @patrick, @eugene])
   end
+
+  it 'can charge for kayak by hour' do
+    @dock.rent(@kayak_1, @patrick)
+    @dock.rent(@kayak_2, @patrick)
+    @dock.rent(@sup_1, @eugene)
+
+    @kayak_1.add_hour
+    @kayak_1.add_hour
+
+    expected = {
+      :card_number => "4242424242424242",
+      :amount => 40
+    }
+
+    expect(@dock.charge(@kayak_1)).to eq(expected)
+  end
+
+  it 'can charge for paddle boards by hour' do
+    @dock.rent(@kayak_1, @patrick)
+    @dock.rent(@kayak_2, @patrick)
+    @dock.rent(@sup_1, @eugene)
+
+    @sup_1.add_hour
+    @sup_1.add_hour
+    @sup_1.add_hour
+  end
 end
