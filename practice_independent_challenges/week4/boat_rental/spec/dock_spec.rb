@@ -56,5 +56,31 @@ RSpec.describe Dock do
     @sup_1.add_hour
     @sup_1.add_hour
     @sup_1.add_hour
+
+    expected = {
+    :card_number => "1313131313131313",
+    :amount => 45
+    }
+
+    expect(@dock.charge(@sup_1)).to eq(expected)
+  end
+
+  it 'will not charge more than max rental time' do
+    @dock.rent(@kayak_1, @patrick)
+    @dock.rent(@kayak_2, @patrick)
+    @dock.rent(@sup_1, @eugene)
+
+    @sup_1.add_hour
+    @sup_1.add_hour
+    @sup_1.add_hour
+    @sup_1.add_hour
+    @sup_1.add_hour
+
+    expected = {
+      :card_number => "1313131313131313",
+      :amount => 45
+      }
+
+      expect(@dock.charge(@sup_1)).to eq(expected)
   end
 end
