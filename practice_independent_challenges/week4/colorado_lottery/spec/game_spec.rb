@@ -18,8 +18,13 @@ RSpec.describe Game do
     expect(@pick_4.name).to eq('Pick 4')
   end
 
-  xit 'game has a cost' do
+  it 'game has a cost' do
     expect(@mega_millions.cost).to eq(5)
     expect(@pick_4.cost).to eq(2)
+  end
+
+  it 'can tell if it has a national drawing' do
+    expect(@mega_millions.national_drawing?).to eq(true)
+    expect(@pick_4.national_drawing?).to eq(false)
   end
 end
