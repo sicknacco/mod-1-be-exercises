@@ -17,6 +17,10 @@ RSpec.describe Contestant do
 
   it 'contestant has attributes' do
     expect(@alexander.full_name).to eq("Alexander Aigiades")
-    
+    expect(@alexander.age).to eq(28)
+    # expect(@alexander.state_of_residence).to eq("CO")
+    # expect(@alexander.spending_money).to eq(10)
+    # expect(@alexander.out_of_state?).to eq(false)
+    # expect(@alexander.game_interests).to eq([])
   end
 end
