@@ -8,5 +8,7 @@ RSpec.describe ColoradoLottery do
     @lottery = ColoradoLottery.new
   end
 
+  it 'exists' do
   expect(@lottery).to be_an_instance_of(ColoradoLottery)
+  end
 end
