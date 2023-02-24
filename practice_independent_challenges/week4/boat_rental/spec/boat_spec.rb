@@ -1,6 +1,4 @@
-require 'rspec'
-require './lib/boat'
-require './lib/renter'
+require 'spec_helper'
 
 RSpec.describe Boat do
   before(:each) do
