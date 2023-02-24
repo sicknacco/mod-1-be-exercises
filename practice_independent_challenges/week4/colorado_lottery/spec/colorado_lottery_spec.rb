@@ -56,4 +56,10 @@ RSpec.describe ColoradoLottery do
 
     expect(@alexander.game_interests).to eq(['Pick 4', 'Mega Millions'])
   end
+
+  it 'contestant is interested and 18' do
+    expect(@lottery.interested_and_18?(@alexander, @pick_4)).to eq(true)
+    expect(@lottery.interested_and_18?(@benjamin, @mega_millions)).to eq(false)
+    expect(@lottery.interested_and_18?(@alexander, @cash_5)).to eq(false)
+  end
 end
