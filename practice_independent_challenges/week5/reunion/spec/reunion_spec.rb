@@ -16,7 +16,8 @@ RSpec.describe Reunion do
 
   it 'can add an activitiy' do
     @reunion.add_activity(@activity_1)
-
+    
+    expect(@reunion.name).to eq("1406 BE")
     expect(@reunion.activities).to eq([@activity_1])
   end
 end
