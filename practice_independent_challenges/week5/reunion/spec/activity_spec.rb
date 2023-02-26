@@ -40,6 +40,6 @@ RSpec.describe do
 
     expect(@activity.total_cost).to eq(60)
     expect(@activity.split).to eq(30)
-    
+    expect(@activity.owed).to eq({"Maria" => 10, "Luther" => -10})
   end
 end
