@@ -13,4 +13,8 @@ class Activity
     @total_cost += amt_paid
     @participants[person] = amt_paid
   end
+
+  def split
+    @total_cost / @participants.count
+  end
 end
