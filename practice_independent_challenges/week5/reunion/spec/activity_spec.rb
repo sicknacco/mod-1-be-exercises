@@ -14,7 +14,15 @@ RSpec.describe do
     expect(@activity.name).to eq("Brunch")
   end
 
-  it 'starts with no participants' do
+  it 'starts with no participants and no cost' do
     expect(@activity.participants).to eq({})
+    expect(@activity.total_cost).to eq(0)
+  end
+
+  it 'can add participants' do
+    @activity.add_participant("Maria", 20)
+
+    expect(@activity.participants).to eq({"Maria" => 20})
+    expect(@activity.total_cost).to eq(20)
   end
 end
