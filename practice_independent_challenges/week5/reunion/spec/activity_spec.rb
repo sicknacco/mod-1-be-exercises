@@ -25,4 +25,21 @@ RSpec.describe do
     expect(@activity.participants).to eq({"Maria" => 20})
     expect(@activity.total_cost).to eq(20)
   end
+
+  it 'can add multiple participants and increase total cost' do
+    @activity.add_participant("Maria", 20)
+    @activity.add_participant("Luther", 40)
+
+    expect(@activity.participants).to eq({"Maria" => 20, "Luther" => 40})
+    expect(@activity.total_cost).to eq(60)
+  end
+#total cost / #of participants
+  it 'can split the total cost evenly' do
+    @activity.add_participant("Maria", 20)
+    @activity.add_participant("Luther", 40)
+
+    expect(@activity.total_cost).to eq(60)
+    expect(@activity.split).to eq(30)
+    
+  end
 end
