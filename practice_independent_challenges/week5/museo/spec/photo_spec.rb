@@ -4,7 +4,13 @@ require './lib/artist'
 
 RSpec.describe Photograph do
   before(:each) do
-    @photograph = Photograph.new(attributes)
+    @attributes = {
+      id: "1",
+      name: "Rue Mouffetard, Paris (Boy with Bottles)",
+      artist_id: "4",
+      year: "1954"
+    }
+    @photograph = Photograph.new(@attributes)
   end
 
   it 'exists' do
