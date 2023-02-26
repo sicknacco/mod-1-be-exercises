@@ -27,5 +27,17 @@ class Reunion
     end
     breakout
   end
-  
+
+  def summary
+    summary = ""
+    participants = breakout.keys
+    count = 0
+    until breakout.keys.count == count
+      summary += "#{participants[0]}: #{breakout[participants[0]]}\n"
+      count += 1
+      participants.shift
+    end
+    summary.chomp
+  end
 end
+
