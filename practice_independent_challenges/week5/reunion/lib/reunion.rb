@@ -13,4 +13,19 @@ class Reunion
     @activities << activity
     @total_cost += activity.total_cost
   end
+
+  def breakout
+    breakout = {}
+    @activities.each do |activitiy|
+      activitiy.owed.each_pair do |name, amt_owed|
+        if breakout.has_key?(name)
+          breakout[name] += amt_owed
+        elsif !breakout.has_key?(name)
+          breakout[name] = amt_owed
+        end
+      end
+    end
+    breakout
+  end
+  
 end
