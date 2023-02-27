@@ -1,6 +1,4 @@
-require 'rspec'
-require './lib/photograph'
-require './lib/artist'
+require 'spec_helper'
 
 RSpec.describe Artist do
   before(:each) do
