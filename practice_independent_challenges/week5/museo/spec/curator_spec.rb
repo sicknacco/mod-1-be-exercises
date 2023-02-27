@@ -146,8 +146,7 @@ RSpec.describe do
         @artist_2 => [@photo_2],
         @artist_3 => [@photo_3, @photo_4]
       }
-
-      expect(@curator.photographs_by_artist).to eq(expected)
+      expect(@curator.photographs_by_artist(@artist)).to eq([expected])
     end
   end
 end
