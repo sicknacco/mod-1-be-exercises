@@ -141,7 +141,13 @@ RSpec.describe do
       @curator.add_photograph(@photo_3)
       @curator.add_photograph(@photo_4)
 
-      expect(@curator.photographs_by_artist).to eq(Hash)
+      expected = {
+        @artist_1 => [@photo_1],
+        @artist_2 => [@photo_2],
+        @artist_3 => [@photo_3, @photo_4]
+      }
+
+      expect(@curator.photographs_by_artist).to eq(expected)
     end
   end
 end
