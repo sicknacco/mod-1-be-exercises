@@ -9,7 +9,7 @@ RSpec.describe do
     expect(@curator).to be_a Curator
   end
 
-  xit 'begins with empty photograph array' do
-    epect(@curator.photographs).to eq([])
+  it 'begins with empty photograph array' do
+    expect(@curator.photographs).to eq([])
   end
 end
