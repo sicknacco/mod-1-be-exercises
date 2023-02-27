@@ -2,11 +2,11 @@
 require "csv"
 puts "EventManager initialized."
 
-## Reads the file contents
+# # Reads the file contents
 # contents = File.read "event_attendees.csv"
 # puts contents
 
-## Read file line by line
+# # Read file line by line
 # lines = File.readlines "event_attendees.csv"
 # lines.each do |line|
 #   puts line
@@ -56,8 +56,9 @@ puts "EventManager initialized."
 #   puts name
 # end
 
-##Switching over to use the CSV Library
-# contents = CSV.open "event_attendees.csv", headers: true
+### !!!!!!!!!!!
+# #Switching over to use the CSV Library
+# contents = CSV.open "event_attendees.csv", headers: true   ##same as using () ("event_attendees.csv", headers: true)
 # contents.each do |row|
 #   name = row[2]
 #   puts name
@@ -101,7 +102,7 @@ puts "EventManager initialized."
 #   if zipcode.length < 5
 #     zipcode = zipcode.rjust 5, "0"
 #   elsif zipcode.length > 5
-#     zipcode = zipcode[0..4]
+#     zipcode = zipcode[0..4] ##This takes the first 5 elements
 #   end
 
 #   puts "#{name} #{zipcode}"
@@ -127,6 +128,8 @@ puts "EventManager initialized."
 # end
 
 ## Moving clean zip codes to their own method.
+contents = CSV.open 'event_attendees.csv', headers: true, header_converters: :symbol
+
 def clean_zipcode(zipcode)
   if zipcode.nil?
     "00000"
@@ -139,11 +142,8 @@ def clean_zipcode(zipcode)
   end
 end
 
-contents = CSV.open 'event_attendees.csv', headers: true, header_converters: :symbol
-
 contents.each do |row|
   name = row[:first_name]
-
   zipcode = clean_zipcode(row[:zipcode])
 
   puts "#{name} #{zipcode}"
