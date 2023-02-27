@@ -55,5 +55,7 @@ RSpec.describe do
     @curator.add_artist(artist_2)
 
     expect(@curator.artists).to eq([artist_1, artist_2])
+    expect(artist_1.name).to eq("Henri Cartier-Bresson")
+    expect(artist_2.name).to eq("Ansel Adams")
   end
 end
