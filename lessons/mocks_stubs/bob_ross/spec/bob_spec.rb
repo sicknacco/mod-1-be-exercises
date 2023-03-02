@@ -20,8 +20,8 @@ RSpec.describe Bob do
   describe 'Methods' do
     it 'can add paint' do
       bob = Bob.new
-      paint_1 = Paint.new("Alizarin Crimson")
-      paint_2 = Paint.new("Van Dyke Brown")
+      paint_1 = double("paint 1") #these are the mocks. used "double"
+      paint_2 = double("paint 2")
 
       bob.add_paint(paint_1)
       bob.add_paint(paint_2)
@@ -31,18 +31,33 @@ RSpec.describe Bob do
 
     it 'can return paint colors' do
       bob = Bob.new
-      paint_1 = Paint.new("Alizarin Crimson")
-      paint_2 = Paint.new("Van Dyke Brown")
+      # paint_1 = Paint.new("Alizarin Crimson") ## real one
+      # paint_2 = Paint.new("Van Dyke Brown")
+
+      paint_1 = double("paint 1") #mocks
+      paint_2 = double("paint 2")
+
       bob.add_paint(paint_1)
       bob.add_paint(paint_2)
+
+      ### The two following lines are stubs. Needs to be before expect statment
+      ### Still needs to be below the mocks
+      allow(paint_1).to receive(:color).and_return("Alizarin Crimson")
+      allow(paint_2).to receive(:color).and_return("Van Dyke Brown")
 
       expect(bob.paint_colors).to eq(["Alizarin Crimson", "Van Dyke Brown"])
     end
 
     it 'can calculate total paint amount' do
       bob = Bob.new
-      paint_1 = Paint.new("Alizarin Crimson", 42)
-      paint_2 = Paint.new("Van Dyke Brown", 25)
+      # paint_1 = Paint.new("Alizarin Crimson", 42)
+      # paint_2 = Paint.new("Van Dyke Brown", 25)
+
+      paint_1 = double(60) #mocks
+      paint_2 = double(7)
+
+      allow(paint_1).to receive(:amount).and_return(42) #stubs
+      allow(paint_2).to receive(:amount).and_return(25)
 
       bob.add_paint(paint_1)
       bob.add_paint(paint_2)
