@@ -19,7 +19,7 @@ puts "EventManager initialized."
 #   p columns
 # end
 
-## Display the first name of all attendees
+# # Display the first name of all attendees
 # lines = File.readlines "event_attendees.csv"
 # lines.each do |line|
 #   columns = line.split(",")
