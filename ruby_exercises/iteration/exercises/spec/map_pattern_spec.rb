@@ -58,15 +58,17 @@ RSpec.describe 'map pattern' do
     expect(doubles).to eq(expected)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     numbers = [1, 2, 3, 4, 5]
     squares = []
-    # Your Code Here
+    numbers.each do |number|
+      squares << number * number
+    end
 
     expect(squares).to eq([1, 4, 9, 16, 25])
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     numbers = {
       one: 1,
       two: 2,
@@ -75,7 +77,9 @@ RSpec.describe 'map pattern' do
       five: 5
     }
     squares = {}
-    # Your Code Here
+    numbers.each do |name, number|
+      squares[name] = number * number
+    end
 
     expected = {
       one: 1,
@@ -87,14 +91,17 @@ RSpec.describe 'map pattern' do
     expect(squares).to eq(expected)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     names = ["alice", "bob", "charlie", "david", "eve"]
-    #Your Code Here
+    lengths = []
+    names.each do |name|
+      lengths << name.length
+    end
 
     expect(lengths).to eq([5, 3, 7, 5, 3])
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     family = {
       mother: "alice",
       father: "bob",
@@ -102,7 +109,10 @@ RSpec.describe 'map pattern' do
       uncle: "david",
       sister: "eve"
     }
-    #Your Code Here
+    lengths = {}
+    family.each do |relationship, name|
+      lengths[relationship] = name.length
+    end
 
     expected = {
       mother: 5,
