@@ -96,14 +96,20 @@ RSpec.describe 'find pattern' do
     expect(multiple_of_three).to eq(:abdi)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     people = ["Willie", "Carmen Sandiego", "Bryan", "Faith", "Zac"]
-    # Your Code Here
+    carmen = " "
+    people.each do |person|
+      if person = "Carmen Sandiego"
+        carmen = person
+        break
+      end
+    end
 
     expect(carmen).to eq("Carmen Sandiego")
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     places = {
       Bangkok: "Willie",
       Santa_Fe: "Carmen Sandiego",
@@ -111,15 +117,25 @@ RSpec.describe 'find pattern' do
       Munich: "Faith",
       Mogudishu: "Zac"
     }
-    # Your Code Here
+    where_is_carmen_sandiego = nil
+    places.each do |place, person|
+      if person == "Carmen Sandiego"
+        where_is_carmen_sandiego = place
+      end
+    end
 
     expect(where_is_carmen_sandiego).to eq(:Santa_Fe)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     numbers = [3, 7, 13, 11, 10, 2, 17]
-    # Your Code Here
-
+    even = 0
+    numbers.each do |number|
+      if number.even?
+        even = number
+        break
+      end
+    end
     expect(even).to eq(10)
   end
 
