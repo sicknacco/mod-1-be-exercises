@@ -9,7 +9,7 @@ RSpec.describe 'map pattern' do
     expect(capitalized_names).to eq(["Alice", "Bob", "Charlie"])
   end
 
-  xit 'test 2' do
+  it 'test 2' do
     family = {
       mother: "alice",
       father: "bob",
@@ -27,16 +27,16 @@ RSpec.describe 'map pattern' do
     expect(capitalized_family).to eq(expected)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     numbers = [1, 2, 3, 4, 5]
     doubles = []
     numbers.each do |number|
-      # Your Code Here
+      doubles << number * 2
     end
     expect(doubles).to eq([2, 4, 6, 8, 10])
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     numbers = {
       one: 1,
       two: 2,
@@ -46,7 +46,7 @@ RSpec.describe 'map pattern' do
     }
     doubles = {}
     numbers.each do |name, number|
-      # Your Code Here
+      doubles[name] = number * 2
     end
     expected = {
       one: 2,
