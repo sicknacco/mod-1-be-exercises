@@ -124,14 +124,17 @@ RSpec.describe 'map pattern' do
     expect(lengths).to eq(expected)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     names = ["alice", "bob", "charlie", "david", "eve"]
-    #Your Code Here
+    backwards = []
+    names.each do |name|
+      backwards << name.reverse
+    end
 
     expect(backwards).to eq(["ecila", "bob", "eilrahc", "divad", "eve"])
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     family = {
       mother: "alice",
       father: "bob",
@@ -139,7 +142,10 @@ RSpec.describe 'map pattern' do
       uncle: "david",
       sister: "eve"
     }
-    #Your Code Here
+    backwards = {}
+    family.each do |relationship, name|
+      backwards[relationship] = name.reverse
+    end
 
     expected = {
       mother: "ecila",
