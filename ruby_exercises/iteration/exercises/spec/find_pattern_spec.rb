@@ -30,17 +30,22 @@ RSpec.describe 'find pattern' do
     expect(younger_than_thirty).to eq(:ladonna)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     ages = [39, 45, 29, 24, 50]
     older_than_fifty = nil
     ages.each do |age|
-      # Your Code Here
+      ages.each do |age|
+        if age > 50
+          older_than_fifty = age
+          break
+        end
+      end
     end
 
     expect(older_than_fifty).to be_nil
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     ages = {
       abdi: 39,
       hassan: 45,
@@ -50,21 +55,29 @@ RSpec.describe 'find pattern' do
     }
     older_than_fifty = nil
     ages.each do |name, age|
-      # Your Code Here
+      if age > 50
+        older_than_fifty = name
+        break
+      end
     end
 
     expect(older_than_fifty).to be_nil
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     ages = [39, 45, 29, 24, 50]
     multiple_of_three = nil
-    # Your Code Here
+    ages.each do |age|
+      if age % 3
+        multiple_of_three = age
+        break
+      end
+    end
 
     expect(multiple_of_three).to eq(39)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     ages = {
       abdi: 39,
       hassan: 45,
@@ -73,7 +86,12 @@ RSpec.describe 'find pattern' do
       miguel: 50
     }
     multiple_of_three = nil
-    # Your Code Here
+    ages.each do |name, age|
+      if age % 3
+        multiple_of_three = name
+        break
+      end
+    end
 
     expect(multiple_of_three).to eq(:abdi)
   end
