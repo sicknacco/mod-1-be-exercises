@@ -156,7 +156,7 @@ RSpec.describe 'find pattern' do
     expect(pending).to eq(:books)
   end
 
-  xit 'test 11' do
+  it 'test 11' do
     purchases = {
       "shoes" => :paid,
       "backpack" => :paid,
@@ -164,8 +164,13 @@ RSpec.describe 'find pattern' do
       "posters" => :paid,
       "food" => :pending
     }
-    # Your Code Here
-
+    starts_with_b = nil
+    purchases.each do |purchase, payment|
+      if purchase.include?('b')
+        starts_with_b = purchase
+        break
+      end
+    end
     expect(starts_with_b).to eq("backpack")
   end
 end
