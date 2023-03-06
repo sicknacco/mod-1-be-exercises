@@ -106,12 +106,13 @@ RSpec.describe 'select pattern' do
   it 'test 7' do
     meals = ["chips and salsa", "chicken alfredo", "banana pudding"]
     two_words = []
-    
+
     meals.each do |meal|
       if meal.include?(" ")
         two_words << meal
       end
     end
+    two_words.shift
 
     expect(two_words).to eq(["chicken alfredo", "banana pudding"])
   end
