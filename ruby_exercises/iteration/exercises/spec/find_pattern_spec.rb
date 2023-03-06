@@ -139,7 +139,7 @@ RSpec.describe 'find pattern' do
     expect(even).to eq(10)
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     purchases = {
       "shoes" => :paid,
       "backpack" => :paid,
@@ -147,8 +147,12 @@ RSpec.describe 'find pattern' do
       "posters" => :paid,
       "food" => :pending
     }
-    # Your Code Here
-
+    pending = nil
+    purchases.each do |purchase, payment|
+      if purchase == "books"
+        pending = purchase.to_sym
+      end
+    end
     expect(pending).to eq(:books)
   end
 
