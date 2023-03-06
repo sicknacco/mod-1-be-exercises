@@ -31,17 +31,19 @@ RSpec.describe 'select pattern' do
     expect(evens).to eq(expected)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
     greater_than_four = []
     rainbow.each do |color|
-      #Your Code Here
+      if color.length > 4
+        greater_than_four << color
+      end
     end
 
     expect(greater_than_four).to eq(["orange", "yellow", "green", "indigo", "violet"])
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     rainbow = {
       first: "red",
       second: "orange",
@@ -53,7 +55,9 @@ RSpec.describe 'select pattern' do
     }
     greater_than_four = {}
     rainbow.each do |position, color|
-      #Your Code Here
+      if color.length > 4
+        greater_than_four[position] = color
+      end
     end
 
     expected = {
@@ -63,18 +67,22 @@ RSpec.describe 'select pattern' do
       sixth: "indigo",
       seventh: "violet"
     }
-    expected(greater_than_four).to eq(expected)
+    expect(greater_than_four).to eq(expected)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     furniture = ["dining table", "bed", "coffee table", "deck chairs"]
     words_with_c = []
-    #Your Code Here
+    furniture.each do |furniture|
+      if furniture.include?('c')
+        words_with_c << furniture
+      end
+    end
 
     expect(words_with_c).to eq(["coffee table", "deck chairs"])
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     furniture = {
       dining_room: "dining table",
       bedroom: "bed",
@@ -82,7 +90,11 @@ RSpec.describe 'select pattern' do
       patio: "deck chairs"
     }
     words_with_c = {}
-    #Your Code Here
+    furniture.each do |room, furniture|
+      if furniture.include?("c")
+        words_with_c[room] = furniture
+      end
+    end
 
     expected = {
       living_room: "coffee table",
@@ -91,9 +103,15 @@ RSpec.describe 'select pattern' do
     expect(words_with_c).to eq(expected)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     meals = ["chips and salsa", "chicken alfredo", "banana pudding"]
-    #Your Code Here
+    two_words = []
+    
+    meals.each do |meal|
+      if meal.include?(" ")
+        two_words << meal
+      end
+    end
 
     expect(two_words).to eq(["chicken alfredo", "banana pudding"])
   end
