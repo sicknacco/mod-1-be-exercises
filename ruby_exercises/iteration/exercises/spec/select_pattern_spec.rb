@@ -130,7 +130,7 @@ RSpec.describe 'select pattern' do
         two_words[meal] = dish
       end
     end
-    
+
     expected = {
       entre: "chicken alfredo",
       dessert: "banana pudding"
@@ -139,21 +139,19 @@ RSpec.describe 'select pattern' do
   end
 
 
-  xit 'test 9' do
+  it 'test 9' do
     prices = [3, 1.4, 3.5, 2, 4.9, 9.1, 8.0]
-    # floats = []
-    # prices.each do |price|
-    #   require 'pry'; binding.pry
-    #   if price.include?(.)
-    #     floats << price
-    #   end
-    #   floats
-    # end
-
+    floats = []
+    prices.select do |price|
+      if price.is_a?(Float)
+        floats << price
+      end
+      floats
+    end
     expect(floats).to eq([1.4, 3.5, 4.9, 9.1, 8.0])
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     items = {
       tv: 3,
       toaster: 1.4,
@@ -163,7 +161,13 @@ RSpec.describe 'select pattern' do
       sack_o_potatoes: 9.1,
       tonka_truck: 8.0
     }
-    #Your Code Here
+    floats = {}
+    items.each do |item, count|
+      if count.is_a?(Float)
+        floats[item] = count
+      end
+      floats
+    end
 
     expected = {
       toaster: 1.4,
