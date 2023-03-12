@@ -26,11 +26,13 @@ RSpec.describe 'max and min by pattern' do
     expect(greatest).to eq(1000000)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     meals = ["banana", "nuts", "salad", "steak", "cake"]
     shortest_word = meals[0]
     meals.each do |meal|
-      # Your Code Here
+      if meal.length < shortest_word.length
+        shortest_word = meal
+      end
     end
 
     expect(shortest_word).to eq("nuts")
