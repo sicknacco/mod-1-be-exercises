@@ -99,7 +99,10 @@ RSpec.describe 'all pattern' do
 
   xit 'test 9' do
     snacks = ["GARLIC PLANTAINS", "SNICKERDOODLES", "Pretzels"]
-    # Your Code Here
+    all_caps = false
+    snacks.each do |snack|
+      all_caps = true unless snack.i
+    end
 
     expect(all_caps).to be false
   end
