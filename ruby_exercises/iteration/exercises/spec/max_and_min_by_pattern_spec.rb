@@ -38,7 +38,7 @@ RSpec.describe 'max and min by pattern' do
     expect(shortest_word).to eq("nuts")
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     meals = {
       breakfast: "banana",
       snack: "nuts",
@@ -48,16 +48,22 @@ RSpec.describe 'max and min by pattern' do
     }
     shortest_word = meals[meals.keys.first]
     meals.each do |meal, dish|
-      # Your Code Here
+      if dish.length < shortest_word.length
+        shortest_word = dish
+      end
     end
 
     expect(shortest_word).to eq("nuts")
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     stats = [3001, 431, 1695, 0.27601, 0.340]
     most_digits = stats[0]
-    # Your Code Here
+    stats.each do |stat|
+      if stat.ceil < most_digits
+        most_digits = stat
+      end
+    end
 
     expect(most_digits).to eq(0.27601)
   end
