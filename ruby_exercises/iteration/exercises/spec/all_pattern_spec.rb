@@ -24,16 +24,16 @@ RSpec.describe 'all pattern' do
     expect(all_zeros).to be true
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     words = ["love", "hate", "fire", "bird", "call"]
     all_four_letters = true
     words.each do |word|
-      # Your Code Here
+      all_four_letters = false unless word.length == 4
     end
     expect(all_four_letters).to be true
   end
-
-  xit 'test 4' do
+  
+  it 'test 4' do
     words = {
       one: "love",
       two: "hate",
@@ -43,34 +43,41 @@ RSpec.describe 'all pattern' do
     }
     all_four_letters = true
     words.each do |position, word|
-      # Your Code Here
+      all_four_letters = false unless word.length == 4
     end
     expect(all_four_letters).to be true
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     statuses = [:busy, :busy, :busy]
     all_busy = true
-    # Your Code Here
+    statuses.each do |status|
+      all_busy = !false unless status == [:busy]
+    end
 
     expect(all_busy).to be true
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     friend_status = {
       "Megan" => :busy,
       "Sarah" => :busy,
       "Duncan" => :busy,
     }
     all_busy = true
-    # Your Code Here
+    friend_status.each do |friend, status|
+      all_busy = !false unless status == [:busy]
+    end
 
     expect(all_busy).to be true
   end
 
   xit 'test 7' do
     zip_codes = [94381, 831, 50009, 36232, 8992, 89999, 11110]
-    # Your Code Here
+    all_five_digits = false
+    zip_codes.each do |zip_code|
+      all_five_digits = true unless zip_code.count < 5
+    end
 
     expect(all_five_digits).to be false
   end
