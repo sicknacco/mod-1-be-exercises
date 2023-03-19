@@ -49,6 +49,6 @@ RSpec.describe WorldCup do
     @croatia.add_player(@modric)
     @croatia.add_player(@vida)
 
-    expect(active_players_by_position("midfielder")).to eq([@pogba, @modric])
+    expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @modric])
   end
 end
