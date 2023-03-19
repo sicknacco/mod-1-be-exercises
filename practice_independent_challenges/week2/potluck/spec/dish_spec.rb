@@ -7,7 +7,7 @@ RSpec.describe Dish do
   end
 
   it 'exists and has attributes' do
-    expect(@dish).to be_a (Dish)
+    expect(@dish).to be_a(Dish)
     expect(@dish.name).to eq("Couscous Salad")
     expect(@dish.category).to eq(:appetizer)
   end
